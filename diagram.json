@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "LUCA REPUPILLI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -17.7,
+      "left": 216.7,
+      "attrs": { "distance": "292" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -236.57, "left": -89.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -99.4,
+      "left": 278.4,
+      "attrs": { "color": "green", "bounce": "1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -45.6,
+      "left": -171,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "nano:5V", "ultrasonic1:VCC", "red", [ "v33.6", "h162.7" ] ],
+    [ "nano:GND.1", "ultrasonic1:GND", "black", [ "v24", "h-0.5" ] ],
+    [
+      "ultrasonic1:TRIG",
+      "nano:9",
+      "green",
+      [ "v38.4", "h-115.6", "v-124.8", "h-134.4", "v9.6" ]
+    ],
+    [ "ultrasonic1:ECHO", "nano:8", "green", [ "v28.8", "h-116", "v-124.8", "h-134.4" ] ],
+    [ "lcd1:VSS", "nano:GND.1", "green", [ "v220.8", "h201.6" ] ],
+    [ "lcd1:VDD", "nano:5V", "green", [ "v211.2", "h172.9" ] ],
+    [ "lcd1:V0", "nano:GND.1", "green", [ "v230.4", "h182.1" ] ],
+    [ "lcd1:RS", "nano:12", "green", [ "v96", "h48.3" ] ],
+    [ "lcd1:RW", "nano:GND.1", "green", [ "v240", "h163.1" ] ],
+    [ "lcd1:E", "nano:11", "green", [ "v86.4", "h38.4" ] ],
+    [ "lcd1:D4", "nano:4", "green", [ "v48", "h57.6", "v9.6" ] ],
+    [ "lcd1:D5", "nano:5", "green", [ "v38.4", "h0.1" ] ],
+    [ "lcd1:D6", "nano:6", "green", [ "v28.8", "h19.4" ] ],
+    [ "lcd1:D7", "nano:7", "green", [ "v0" ] ],
+    [ "lcd1:K", "nano:GND.1", "green", [ "v9.6", "h115.2", "v172.8", "h-57.6" ] ],
+    [ "btn1:1.l", "nano:2", "green", [ "h0" ] ],
+    [ "btn1:2.l", "nano:GND.1", "green", [ "h-105.6", "v173", "h-28.8" ] ],
+    [ "bz1:2", "nano:10", "green", [ "v9.6", "h38", "v-76.8", "h134.4", "v28.8" ] ],
+    [ "bz1:1", "nano:GND.1", "green", [ "v105.6", "h288" ] ],
+    [ "lcd1:A", "nano:3", "green", [ "v28.8", "h28.7" ] ]
+  ],
+  "dependencies": {}
+}
