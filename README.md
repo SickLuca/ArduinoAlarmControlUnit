@@ -1,6 +1,7 @@
 # ArduinoAlarmControlUnit - Wokwi Simulation
 
 This repository contains an Arduino-based project designed to run on the [Wokwi](https://wokwi.com/) simulation platform. It includes the complete source code and the necessary configuration files to simulate the hardware components used.
+The entire code is developed by using a finite state machine architecture combined with a register manipulation approach. The system relies heavily on interrupt-driven programming.
 
 ## Repository Contents
 
